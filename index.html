@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/crypto-js.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="./assets/marvel-logo-0.png" alt="marvel-logo-0" id="logo-nav" class="logo-nav">
+            <input type="text" id="search" placeholder="Buscar personaje..." onkeyup="filtrarPersonajes()">
+        </nav>
+        
+        
+    </header>
+    <main>
+        <div id="spinner" class="spinner" style="display: none;"></div>
+        <div class="video-background">
+            <iframe src="https://www.youtube.com/embed/UhVjp48U2Oc?autoplay=1&mute=1&loop=1&playlist=UhVjp48U2Oc&controls=0&showinfo=0&modestbranding=1"
+                    frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div id="contenedor-personajes" class="contenedor-personajes"></div>
+        <div id="paginacion">
+            <button id="atras" onclick="paginaAnterior()" disabled>Atrás</button>
+            <button id="siguiente" onclick="paginaSiguiente()">Siguiente</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

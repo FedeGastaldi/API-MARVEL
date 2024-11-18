@@ -1,0 +1,270 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #362c2c;
+    color: #333;
+   
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+#search {
+    padding: 15px;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+    background-color: #202020;
+}
+
+/* Contenedor de personajes */
+.contenedor-personajes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 5rem 2rem 5rem;
+}
+
+/* Estilo base de cada tarjeta */
+.tarjeta {
+    background-color: rgb(15, 15, 15);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 270px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(15px);
+    overflow: hidden;
+
+    border: 1px solid #ffffff22;
+  background-color: #282c34;
+  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: .7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: .5s all;
+}
+
+/* Efecto al hacer hover sobre la tarjeta */
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del personaje */
+.tarjeta img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: brightness(70%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover en la imagen */
+.tarjeta img:hover {
+    transform: scale(1.1);
+    filter: brightness(90%);
+}
+
+/* Nombre del personaje */
+.tarjeta h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #e67e22;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Descripción del personaje */
+.tarjeta p {
+    font-size: 14px;
+    color: #bdc3c7;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-top: 10px;
+    height: 70px;
+    overflow: hidden;
+}
+
+/* Botón de carga */
+#cargarMasBtn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#cargarMasBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los botones de paginación */
+#paginacion {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#paginacion button {
+    background-color: #f00;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#paginacion button:hover {
+    background-color: #5f4040;
+    transform: translateY(-2px);
+}
+
+#paginacion button:active {
+    background-color: #8b0202;
+    transform: translateY(0);
+}
+
+#paginacion button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Spinner CSS */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Animación para el spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Oculta el contenedor de personajes cuando se está cargando */
+.oculto {
+    display: none;
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 768px) {
+    /* Ajustes en pantallas medianas */
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .tarjeta {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    #paginacion button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes en pantallas pequeñas */
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    .contenedor-personajes {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .tarjeta {
+        padding: 15px;
+    }
+
+    #paginacion button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+        margin: 5px;
+    }
+}
+
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo-nav{
+    width: 15rem;
+    
+}
+
+
+/* Contenedor para el video de fondo */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Ajustes del iframe */
+.video-background iframe {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none; /* Evita que el video interfiera con la interacción del usuario */
+}
+
+/* Contenido en el frente */
+.contenido {
+    position: relative;
+    z-index: 1;
+    color: white; /* Para que el texto se vea sobre el video */
+}
